@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaGlobe, FaMicrophone } from "react-icons/fa";
-import { PiRobotBold } from "react-icons/pi";
 import { TbSpeakerphone } from "react-icons/tb";
 
 interface Props {
@@ -39,7 +38,7 @@ const InputPanel = ({ onSubmit, loading }: Props) => {
       mx="auto"
     >
       <Input
-        placeholder="Ask your legal question..."
+        placeholder="Ask Anything..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         isDisabled={loading}
@@ -50,19 +49,39 @@ const InputPanel = ({ onSubmit, loading }: Props) => {
 
       <HStack justify="space-between">
         <HStack>
-          <IconButton aria-label="Add" icon={<AddIcon />} size="sm" />
-          <IconButton aria-label="Globe" icon={<FaGlobe />} size="sm" />
+          <IconButton
+            aria-label="Add"
+            icon={<AddIcon />}
+            size="sm"
+            variant="ghost"
+          />
+          <IconButton
+            aria-label="Globe"
+            icon={<FaGlobe />}
+            size="sm"
+            variant="ghost"
+          />
           <IconButton
             aria-label="Speaker"
             icon={<TbSpeakerphone />}
             size="sm"
+            variant="ghost"
           />
-          <IconButton aria-label="Refresh" icon={<RepeatIcon />} size="sm" />
-          <IconButton aria-label="Model" icon={<PiRobotBold />} size="sm" />
+          <IconButton
+            aria-label="Refresh"
+            icon={<RepeatIcon />}
+            size="sm"
+            variant="ghost"
+          />
         </HStack>
 
         <HStack spacing={1}>
-          <IconButton aria-label="Mic" icon={<FaMicrophone />} size="sm" />
+          <IconButton
+            aria-label="Mic"
+            icon={<FaMicrophone />}
+            size="sm"
+            variant="ghost"
+          />
           <IconButton
             aria-label="Submit"
             icon={<ArrowForwardIcon />}

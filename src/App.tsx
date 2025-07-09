@@ -1,6 +1,7 @@
 import { Box, Container, Heading, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import ChatBubble from "./components/ChatBubble";
+import DarkModeToggle from "./components/DarkModeToggle";
 import InputPanel from "./components/InputPanel";
 import type { ApiResponse } from "./types/index";
 
@@ -35,18 +36,36 @@ function App() {
     <Box minH="100vh" display="flex" flexDirection="column">
       <Container maxW="3xl" flex="1" py={4}>
         <VStack spacing={4} align="stretch" height="100%">
-          <Heading size="md" textAlign="center">
-            Lexi Legal Chat Assistant
-          </Heading>
+          <Box display="flex" justifyContent="space-between">
+            <Heading size="md" textAlign="center">
+              Lexi Legal Chat Assistant
+            </Heading>
+            <DarkModeToggle />
+          </Box>
 
           <VStack spacing={4} align="stretch" p={4} flex="1" overflowY="auto">
-            {query && <ChatBubble type="user" text={query} />}
-            {response && (
-              <ChatBubble
-                type="bot"
-                text={response.answer}
-                citation={response.citations[0]}
-              />
+            {query ? (
+              <>
+                <ChatBubble type="user" text={query} />
+                {response && (
+                  <ChatBubble
+                    type="bot"
+                    text={response.answer}
+                    citation={response.citations[0]}
+                  />
+                )}
+              </>
+            ) : (
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                opacity={0.6}
+                fontSize="lg"
+                height="50vh"
+              >
+                What can I help you with today?
+              </Box>
             )}
           </VStack>
         </VStack>
