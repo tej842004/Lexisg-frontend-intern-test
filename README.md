@@ -23,7 +23,7 @@ http://localhost:5173
 
 ## 📸 Screenshot / Screen Recording
 
-> ![alt text](<Frontend Assignment Screenshot-1.png>)
+> ![alt text](<Frontend Assignment Screenshot.png>)
 
 The UI mimics a ChatGPT-like interface with:
 
